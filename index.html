@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Allesio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <img src="logo.png" alt="Logo"/>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Cari produk...">
+            <button class="search-btn">Cari</button>
+        </div>
+        <div class="login-btn-container">
+            <button class="login-btn">Login</button>
+            <!-- Theme toggle -->
+            <button id="themeToggle" class="theme-toggle" aria-pressed="false" title="Toggle dark/light mode">⏾</button>
+        </div>
+    </nav>
+    <div class="main-content">  
+        <h1>Selamat Datang di Allesio</h1>
+        <p>Temukan berbagai produk murah dan berkualitas disini!</p>
+    </div>
+    <section id="discounts" class="discount-rotator" aria-labelledby="discountsTitle">
+        <h2 id="discountsTitle">Alle Special Sale</h2>
+        <div class="rotator" id="rotator" aria-live="polite">
+            <button class="rotator-btn prev" id="prevBtn" aria-label="Item sebelumnya">◀</button>
+            <div class="card-wrap">
+                <ul class="cards" id="cards">
+                    <li class="card" data-index="0">
+                        <img src="iphone.png" alt="Iphone 17 Pro Max">
+                        <div class="meta">
+                            <div><strong>Iphone 17 Pro Max</strong> <span class="badge">-30%</span></div>
+                            <div class="price-old">Rp27.000.000</div>
+                            <div class="price-new">Rp18.900.000</div>
+                        </div>
+                    </li>
+                    <li class="card" data-index="1">
+                        <img src="earphones.png" alt="Earphones Bluetooth">
+                        <div class="meta">
+                            <div><strong>Earphones Bluetooth</strong> <span class="badge">-45%</span></div>
+                            <div class="price-old">Rp700.000</div>
+                            <div class="price-new">Rp385.000</div>
+                        </div>
+                    </li>
+                    <li class="card" data-index="2">
+                        <img src="vitamix.png" alt="Blender Vitamix 5200">
+                        <div class="meta">
+                            <div><strong>Blender Vitam ix 5200</strong> <span class="badge">-25%</span></div>
+                            <div class="price-old">Rp450.000</div>
+                            <div class="price-new">Rp337.500</div>
+                        </div>
+                    </li>
+                    <li class="card" data-index="3">
+                        <img src="crocs.png" alt="Crocs">
+                        <div class="meta">
+                            <div><strong>Crocs</strong> <span class="badge">-50%</span></div>
+                            <div class="price-old">Rp1.000.000</div>
+                            <div class="price-new">Rp500.000</div>
+                        </div>
+                    </li>
+                    <li class="card" data-index="4">
+                        <img src="bball.png" alt="Bola basket">
+                        <div class="meta">
+                            <div><strong>Bola Basket Wilson</strong> <span class="badge">-40%</span></div>
+                            <div class="price-old">Rp500.000</div>
+                            <div class="price-new">Rp300.000</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <button class="rotator-btn next" id="nextBtn" aria-label="Item selanjutnya">▶</button>
+        </div>
+        <div class="controls">
+            <button id="pauseResume" aria-pressed="false">Pause</button>
+            <div class="indicators" id="indicators" role="tablist" aria-label="Pilih item">
+                <button class="dot active" data-index="0" aria-label="Item 1"></button>
+                <button class="dot" data-index="1" aria-label="Item 2"></button>
+                <button class="dot" data-index="2" aria-label="Item 3"></button>
+                <button class="dot" data-index="3" aria-label="Item 4"></button>
+                <button class="dot" data-index="4" aria-label="Item 5"></button>
+            </div>
+        </div>
+    </section>
+    <section id="catalog" class="catalog" aria-labelledby="catalogTitle">
+        <h2 id="catalogTitle">Belanja Berdasarkan Jenis</h2>
+        <div class="catalog-inner">
+            <aside class="categories" id="categories" aria-label="Daftar kategori">
+                <button class="cat-btn active" data-cat="all">Semua</button>
+                <button class="cat-btn" data-cat="technology">Teknologi</button>
+                <button class="cat-btn" data-cat="household">Household</button>
+                <button class="cat-btn" data-cat="fashion">Fashion</button>
+                <button class="cat-btn" data-cat="sports">Olahraga</button>
+            </aside>
+            <div class="items-panel">
+                <div class="items-toolbar">
+                    <label for="sortSelect">Urutkan:</label>
+                    <select id="sortSelect">
+                        <option value="popular">Best reviews</option>
+                        <option value="price-asc">Harga: Rendah → Tinggi</option>
+                        <option value="price-desc">Harga: Tinggi → Rendah</option>
+                    </select>
+                    <input id="searchItems" placeholder="Cari dalam kategori..." />
+
+                    <label for="priceMin">Harga:</label>
+                    <input id="priceMin" type="number" placeholder="Min" style="width:90px;">
+                    <input id="priceMax" type="number" placeholder="Max" style="width:90px;">
+
+                </div>
+                <div id="itemsGrid" class="items-grid" aria-live="polite">
+                    <!-- Items will be rendered here by script.js -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="script.js"></script>
+</body>
+</html>
